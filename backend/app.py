@@ -72,8 +72,8 @@ def upload_file():
         print(f"AWS S3 Error: {e}")
         return jsonify({"error": "Cloud storage failure"}), 500
     except Exception as e:
-        print(f"Processing Error: {e}")
-        return jsonify({"error": "Internal server error"}), 500
-
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
