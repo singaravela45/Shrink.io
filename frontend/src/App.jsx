@@ -19,7 +19,7 @@ export default function App() {
       const formData = new FormData();
       formData.append("file", file);
       formData.append("compression", compression);
-      const res = await fetch("https://iekyww3lkj.execute-api.ap-south-1.amazonaws.com/upload", { /
+      const res = await fetch("https://iekyww3lkj.execute-api.ap-south-1.amazonaws.com/upload", { 
         method: "POST",
         body: formData,
       });
